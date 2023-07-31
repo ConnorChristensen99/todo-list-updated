@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Updated Todo App</title>
+</head>
+<body class="body">
+    <div class="wrapper">
+    <div id="search-area">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+        </svg>
+        <input type="text" placeholder="Add a new task" class="input" id="input">
+    </div>
+    <div class="controls">
+    <div class="categories">
+        <ul>
+            <li class="active">All</li>
+            <li>Pending</li>
+            <li>Completed</li>
+        </ul>
+    </div>
+        <button id="clear-btn" class="clear-btn">Clear All</button>
+    
+</div>
+<ul class="task-box">
+    <li class="task">
+        <label for="1">
+            <input type="checkbox" id="1">
+            <p class="todo-text">Renew Membership</p>
+        </label>
+        <div class="settings">
+            <i class="uil uil-ellipsis-h"></i>
+        </div>
+    </li>
+    <li class="task">
+        <label for="2">
+            <input type="checkbox" id="2">
+            <p class="todo-text">Gas Car</p>
+        </label>
+        <div class="settings">
+            <i class="uil uil-ellipsis-h"></i>
+        </div>
+    </li>
+    <li class="task">
+        <label for="3">
+            <input type="checkbox" id="3">
+            <p class="todo-text">Finish Homework</p>
+        </label>
+        <div class="settings">
+            <i class="uil uil-ellipsis-h"></i>
+        </div>
+    </li>
+</ul>
+<p class="footer">&copy; Connor Christensen &dash; Todo App</p>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

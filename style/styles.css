@@ -1,0 +1,128 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+/* BODY WRAPPER */
+.body {
+    background-color: #3c87ff;
+    overflow: hidden;
+}
+.wrapper {
+    background-color: white;
+    width: 30%;
+    border-radius: 10px;
+    margin: 135px auto;
+    padding: 28px 0;
+}
+
+
+
+/* TOP SEARCH AREA */
+#search-area {
+    height: 50px;
+    padding: 0 25px;
+    position: relative;
+}
+#search-area svg {
+    position: absolute;
+    top: 50%;
+    transform: translate(17px, -50%);
+}
+#search-area input {
+    width: 100%;
+    height: 100%;
+    padding-left: 45px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+
+
+
+
+/* CATEGORIES AND CONTROLS */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 3px solid rgba(206, 198, 198, 0.616);
+}
+.controls button {
+    margin: 25px 25px 0 0;
+}
+.controls ul {
+    display: flex;
+    list-style-type: none;
+    margin: 15px 0 0 25px;
+}
+.controls ul li {
+    padding: 15px 15px 5px 15px;
+}
+.controls ul li:hover {
+    cursor: pointer;
+    color:rgba(60, 135, 255, 0.699);
+}
+.clear-btn {
+    background-image: linear-gradient(to right, rgb(148, 206, 240) , rgb(20, 123, 240));
+    border: none;
+    color: white;
+    border-radius: 10px;
+    width: 80px;
+    height: 35px;
+}
+.clear-btn:hover {
+    cursor: pointer;
+    border: 2px solid grey;
+}
+
+
+
+
+/* TASKS STYLING */
+.task-box {
+    padding-top: 15px;
+}
+.task {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(206, 198, 198, 0.616);
+    padding: 25px 0 25px 25px;
+}
+.task input:hover {
+    cursor: pointer;
+}
+.task label {
+    display: flex;
+}
+.todo-text {
+    padding-left: 10px;
+    margin-bottom: -.1px;
+}
+.task i {
+    margin: 0 25px 0 0;
+}
+.task i:hover {
+    cursor: pointer;
+    color:#3c87ff;
+}
+/* ACTIVE STYLING */
+.active {
+    color: #3c87ff;
+    border-bottom: #3c87ff 3px solid;
+}
+.selected {
+    text-decoration: line-through;
+}
+/* FOOTER */
+.footer {
+    font-size: small;
+    color: rgba(128, 128, 128, 0.61);
+    display: flex;
+    justify-content: center;
+}
