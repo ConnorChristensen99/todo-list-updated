@@ -48,6 +48,47 @@ clrBtn.addEventListener('click', () => {
 })
 
 
+
+//Handles the checking of the boxes
+window.addEventListener('load', () => {
+    let checkBoxes = document.getElementsByClassName('checkbox')
+    const copy = Array.from(checkBoxes);
+    
+    console.log(copy)
+
+    copy.forEach(element => {
+        element.addEventListener('click', () => {
+                console.log(element.id)
+                let checkedBox = element.id
+                let addClassCheck = todos.filter(todo => todo.id == checkedBox)
+
+                let finishClass = addClassCheck[0]
+                console.log(finishClass)
+                // So far we are getting the element when clicked on the check box, however we are not able to add the class yet -- throwing an error
+        })
+    });
+})
+
+//Handles the single delete of the box
+window.addEventListener('load', () => {
+    let singleDelete = document.getElementsByClassName('uil-trash')
+    
+    const copy1 = Array.from(singleDelete);
+    
+    console.log(copy1)
+
+    copy1.forEach(element => {
+        element.addEventListener('click', () => {
+                console.log(element.id)
+                let deletedBox = element.id
+                todos.splice(deletedBox, 1)
+                displayTodos()
+        })
+    });
+})
+
+
+
 //DISPLAYS TODOS
 function displayTodos() {
     {
@@ -64,12 +105,15 @@ function displayTodos() {
             newInput = document.createElement('input')
             if (todo.status == "Completed") {
                 newInput.type = "checkbox"
+                newInput.classList.add('checkbox')
                 newInput.id = todo.id
                 newInput.checked = true
             } else {
                 newInput.type = "checkbox"
                 newInput.id = todo.id
+                newInput.classList.add('checkbox')
             }
+
            
         //Checks to see the status when creating Inputs
             newText = document.createElement('p')
@@ -121,6 +165,7 @@ function displayTodos() {
             newTodo.append(newLabel, newDiv)
         
             todoList.append(newTodo)
+
         })
        
     }
