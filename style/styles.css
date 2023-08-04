@@ -80,6 +80,26 @@
     cursor: pointer;
     border: 2px solid grey;
 }
+.myTrash {
+    position: relative;
+    top: 30px;
+    right: 25px;
+}
+.myTrash:hover {
+    cursor: pointer;
+    color: rgb(148, 206, 240);
+}
+.hide {
+    display: none;
+}
+@media (min-width: 1250px) {
+    .myTrash {
+        display: none;
+    }
+    .clear-btn {
+        display: block;
+    }
+  } 
 
 
 
@@ -156,4 +176,13 @@
     color: rgba(128, 128, 128, 0.61);
     display: flex;
     justify-content: center;
+}
+
+
+
+.indivHeaderControl {
+    padding: 25px;
+    margin-bottom: -20px;
+    font-size: x-large;
+    background-color: antiquewhite;
 }

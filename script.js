@@ -1,28 +1,28 @@
 // LIST OF STARTING TODOS
 let todos = [
     {
-      "id": 0,
       "text": "Renew Membership",
       "status": "Pending"
     },
     {
-        "id": 1,
         "text": "Gas Car",
         "status": "Completed"
       },
       {
-        "id": 2,
         "text": "Finish Homework",
         "status": "Pending"
       },
 ]
+let todosPending =[]
+let todosCompleted =[]
 
 // START CREATING VARIABLES
 let addTodoBar = document.getElementById('input')
 let clrBtn = document.getElementById('clear-btn')
+let trashBtn = document.getElementById('trashBtn')
 let todoList = document.getElementById('task-box')
-
-
+let todoListCompleted = document.getElementById('task-box-completed')
+let todoListPending = document.getElementById('task-box-pending')
 
 
 // TAKES USER VALUE AND ADDS A NEW TODO
@@ -37,56 +37,65 @@ addTodoBar.addEventListener('keyup', e => {
 
 
 
-//LETS USER DELETE CHECKED TODOS ----- NEEDS WORK STILL
+//LETS USER DELETE CHECKED TODOS
 clrBtn.addEventListener('click', () => {
+        todos.forEach(todo => {
+            if (todo.status == 'Completed') {
+                let tobeDeleted = todo.id
+                todos.splice(tobeDeleted, 1)
+            }
+        })
+    displayTodos()
+})
+trashBtn.addEventListener('click', () => {
     todos.forEach(todo => {
-        if (todo.status == "Completed") {
-            todos.splice(todo.id, 1)
+        if (todo.status == 'Completed') {
+            let tobeDeleted = todo.id
+            todos.splice(tobeDeleted, 1)
         }
     })
-    displayTodos()
+displayTodos()
 })
 
 
-
 //Handles the checking of the boxes
-window.addEventListener('load', () => {
+window.addEventListener('click', () => {
     let checkBoxes = document.getElementsByClassName('checkbox')
     const copy = Array.from(checkBoxes);
-    
-    console.log(copy)
 
     copy.forEach(element => {
         element.addEventListener('click', () => {
-                console.log(element.id)
                 let checkedBox = element.id
                 let addClassCheck = todos.filter(todo => todo.id == checkedBox)
 
                 let finishClass = addClassCheck[0]
-                console.log(finishClass)
-                // So far we are getting the element when clicked on the check box, however we are not able to add the class yet -- throwing an error
-        })
-    });
-})
 
-//Handles the single delete of the box
-window.addEventListener('load', () => {
-    let singleDelete = document.getElementsByClassName('uil-trash')
-    
-    const copy1 = Array.from(singleDelete);
-    
-    console.log(copy1)
-
-    copy1.forEach(element => {
-        element.addEventListener('click', () => {
-                console.log(element.id)
-                let deletedBox = element.id
-                todos.splice(deletedBox, 1)
+                
+                if (finishClass.status == "Pending") {
+                    finishClass.status = "Completed"
+                } else {
+                    finishClass.status = "Pending"
+                }
                 displayTodos()
         })
     });
 })
 
+
+//Handles the single delete of the box
+window.addEventListener('click', () => {
+    let singleDelete = document.getElementsByClassName('uil-trash')
+    const copy1 = Array.from(singleDelete);
+
+    copy1.forEach(element => {
+        element.addEventListener('click', () => {
+                let newID = copy1.indexOf(element)
+                todos.splice(newID, 1)
+                console.log(todos)
+                displayTodos()
+        })
+    });
+})
 
 
 //DISPLAYS TODOS
@@ -100,6 +109,8 @@ function displayTodos() {
             newTodo.classList.add('task')
         
             newLabel = document.createElement('label')
+            let newID = todos.indexOf(todo)
+            todo.id = newID
         
             //Checks to see the status when creating Inputs
             newInput = document.createElement('input')
@@ -165,13 +176,12 @@ function displayTodos() {
             newTodo.append(newLabel, newDiv)
         
             todoList.append(newTodo)
+            
 
         })
        
     }
 }
-
-
 
 
 //Function call to start the display of Todos
